@@ -3,14 +3,19 @@ import {
   ArrowDownRight,
   ArrowRight,
   Award,
+  Calendar,
   Check,
+  ChevronLeft,
+  ChevronRight,
   Flame,
+  HeartHandshake,
   MapPin,
   Menu,
   MessageCircle,
   Play,
   ShieldCheck,
   Sparkles,
+  Target,
   Trophy,
   Users,
   X,
@@ -23,6 +28,10 @@ import logoImg from "@/assets/raceface-logo.jpg";
 import ridersImg from "@/assets/raceface-riders.jpg";
 import podiumImg from "@/assets/raceface-podium.jpg";
 import athleteImg from "@/assets/raceface-athlete.jpg";
+import sanjayImg from "@/assets/SANJAY.jpeg";
+import sivaImg from "@/assets/SHIVA.jpeg";
+import perryImg from "@/assets/perry1.jpg";
+import dhilipImg from "@/assets/DHILIP.jpg";
 
 const WHATSAPP_NUMBER = "918838396148";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20RaceFace%20Coaching%2C%20I%27d%20like%20to%20talk%20about%20a%20training%20plan.`;
@@ -111,26 +120,98 @@ const services = [
   },
 ];
 
-const highlights = [
+const spotlightAthletes = [
   {
-    title: "Championship Pedigree",
-    desc: "Athletes competing and winning in State Cycling Championships and open endurance races.",
-    icon: Trophy,
+    name: "Sree Vinayak",
+    badge: "Athlete Journey · Sree Vinayak",
+    image: athleteImg,
+    alt: "Young RaceFace cyclist Sree Vinayak standing with Trek road bike at coastal breakwater",
+    statHeader: "Under-10 Champion",
+    statDesc: "Fastest in Under-10, Tamilnadu, Top athelte in India.",
+    kicker: "Athlete Spotlight",
+    title: "Developing tomorrow’s champions with 1:1 attention.",
+    lede: "True speed and endurance aren't built in a single day. They are sculpted through focused miles, dedicated technique drills, and passionate mentorship from coaches who ride alongside you.",
+    highlights: [
+      {
+        title: "Championship Pedigree",
+        desc: "Athletes competing and winning in State Cycling Championships and open endurance races.",
+        icon: Trophy,
+      },
+      {
+        title: "Individualized Metrics",
+        desc: "Heart rate, power zones, and recovery tracking tailored to real biology, not generic algorithms.",
+        icon: Zap,
+      },
+      {
+        title: "Real Accountability",
+        desc: "Direct mentor communication that adapts when life, work, or fatigue demands adjustments.",
+        icon: ShieldCheck,
+      },
+    ],
   },
   {
-    title: "Individualized Metrics",
-    desc: "Heart rate, power zones, and recovery tracking tailored to real biology, not generic algorithms.",
-    icon: Zap,
+    name: "Sanjay",
+    badge: "Athlete Journey · Sanjay",
+    image: sanjayImg,
+    alt: "RaceFace athlete Sanjay, National Championship Silver Medalist",
+    statHeader: "National & Asian Championship",
+    statDesc: "SILVER IN NATIONAL CHAMPIONSHIP'25, REPRESENTED INDIA IN ASIAN CHAMPS",
+    kicker: "Athlete Spotlight",
+    title: "From State Excellence to Asian Championship representation.",
+    lede: "Relentless discipline, precision aerodynamic power pacing, and international-caliber training blocks turned potential into podium silver on the national stage.",
+    highlights: [
+      {
+        title: "National Silver Medalist",
+        desc: "Secured Silver in National Championship 2025 with masterclass race execution and tactical pacing.",
+        icon: Award,
+      },
+      {
+        title: "International Representation",
+        desc: "Selected to represent India in the Asian Championships, racing against the continent's best.",
+        icon: Trophy,
+      },
+      {
+        title: "Elite Power Development",
+        desc: "Bespoke high-wattage sprint profiles and lactate threshold conditioning sculpted by RaceFace.",
+        icon: Zap,
+      },
+    ],
   },
   {
-    title: "Real Accountability",
-    desc: "Direct mentor communication that adapts when life, work, or fatigue demands adjustments.",
-    icon: ShieldCheck,
+    name: "Siva Prakash",
+    badge: "Athlete Journey · Siva Prakash",
+    image: sivaImg,
+    alt: "RaceFace athlete Siva Prakash, All India Police Nationalist",
+    statHeader: "All India Police Nationalist",
+    statDesc: "ALL INDIA POLICE NATIONALIST · ELITE CYCLING CHAMPIONSHIP PERFORMANCE",
+    kicker: "Athlete Spotlight",
+    title: "Disciplined grit & high-velocity power on the national stage.",
+    lede: "Balancing the call of duty with grueling endurance training, Siva Prakash channels unwavering dedication into national-level racing results powered by individualized lactate and cadence strategies.",
+    highlights: [
+      {
+        title: "All India Police Nationalist",
+        desc: "Representing with distinction and podium-grade consistency at the All India Police National events.",
+        icon: Award,
+      },
+      {
+        title: "High-Output Endurance Pacing",
+        desc: "Precision threshold conditioning and aggressive aerobic wattage engineered for grueling breakaways.",
+        icon: Zap,
+      },
+      {
+        title: "Duty & Athletic Mastery",
+        desc: "Tailored training structures harmonized around demanding duty hours to keep form peak on race day.",
+        icon: ShieldCheck,
+      },
+    ],
   },
 ];
 
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [athleteIndex, setAthleteIndex] = useState(0);
+
+  const currentAthlete = spotlightAthletes[athleteIndex];
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -156,6 +237,9 @@ function Index() {
           </a>
           <a href="#results" onClick={closeMenu}>
             Results
+          </a>
+          <a href="#about" onClick={closeMenu}>
+            About Us
           </a>
           <a
             href={WHATSAPP_URL}
@@ -309,32 +393,81 @@ function Index() {
           <div className="spotlight-media">
             <div className="spotlight-image-wrapper">
               <img
-                src={athleteImg}
-                alt="Young RaceFace cyclist standing with Trek road bike at coastal breakwater"
+                key={currentAthlete.name}
+                src={currentAthlete.image}
+                alt={currentAthlete.alt}
+                className="spotlight-fade-img"
               />
               <div className="spotlight-badge">
                 <span className="badge-pulse" />
-                <span>Athlete Journey · Dedication</span>
+                <span>{currentAthlete.badge}</span>
               </div>
               <div className="spotlight-stat-box">
                 <div className="stat-header">
                   <Flame size={16} className="text-coral" />
-                  <strong>Endurance In Action</strong>
+                  <strong>{currentAthlete.statHeader}</strong>
                 </div>
-                <p>Coastal distance rides, climbing intervals, and precision road craft.</p>
+                <p>{currentAthlete.statDesc}</p>
+              </div>
+
+              {/* Swipe Right Button (Click to load Sanjay from Sree, or next athlete) */}
+              <button
+                type="button"
+                className="spotlight-swipe-btn spotlight-swipe-next"
+                onClick={() => setAthleteIndex((prev) => (prev + 1) % spotlightAthletes.length)}
+                aria-label={`Swipe to ${spotlightAthletes[(athleteIndex + 1) % spotlightAthletes.length].name}`}
+                title={`Swipe to ${spotlightAthletes[(athleteIndex + 1) % spotlightAthletes.length].name}`}
+              >
+                <ChevronRight size={24} />
+              </button>
+
+              {/* Swipe Left Button (Click to load previous athlete) */}
+              {athleteIndex > 0 && (
+                <button
+                  type="button"
+                  className="spotlight-swipe-btn spotlight-swipe-prev"
+                  onClick={() => setAthleteIndex((prev) => (prev - 1 + spotlightAthletes.length) % spotlightAthletes.length)}
+                  aria-label={`Swipe to ${spotlightAthletes[(athleteIndex - 1 + spotlightAthletes.length) % spotlightAthletes.length].name}`}
+                  title={`Swipe to ${spotlightAthletes[(athleteIndex - 1 + spotlightAthletes.length) % spotlightAthletes.length].name}`}
+                >
+                  <ChevronLeft size={24} />
+                </button>
+              )}
+
+              {/* Quick switch indicator dots */}
+              <div className="spotlight-indicators">
+                {spotlightAthletes.map((item, idx) => (
+                  <button
+                    key={item.name}
+                    type="button"
+                    className={`indicator-dot ${idx === athleteIndex ? "is-active" : ""}`}
+                    onClick={() => setAthleteIndex(idx)}
+                    aria-label={`Switch to ${item.name}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
           <div className="spotlight-content">
-            <div className="section-kicker">Athlete Spotlight</div>
-            <h2>Developing tomorrow’s champions with 1:1 attention.</h2>
-            <p className="spotlight-lede">
-              True speed and endurance aren't built in a single day. They are sculpted through
-              focused miles, dedicated technique drills, and passionate mentorship from coaches who ride
-              alongside you.
-            </p>
+            <div className="spotlight-tabs-row">
+              <div className="section-kicker">{currentAthlete.kicker}</div>
+              <div className="athlete-selector-pills">
+                {spotlightAthletes.map((item, idx) => (
+                  <button
+                    key={item.name}
+                    type="button"
+                    className={`athlete-pill-btn ${idx === athleteIndex ? "is-active" : ""}`}
+                    onClick={() => setAthleteIndex(idx)}
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <h2>{currentAthlete.title}</h2>
+            <p className="spotlight-lede">{currentAthlete.lede}</p>
             <div className="spotlight-highlights">
-              {highlights.map((item) => (
+              {currentAthlete.highlights.map((item) => (
                 <div className="highlight-item" key={item.title}>
                   <div className="highlight-icon">
                     <item.icon size={20} />
@@ -438,7 +571,7 @@ function Index() {
             src={podiumImg}
             alt="RaceFace athletes celebrating on the Tamil Nadu State Cycling Championship podium"
           />
-          <span className="story-tag">State Championship 2026 · Proven Podiums</span>
+          <span className="story-tag">National Championship 2026 · Proven Podiums</span>
         </div>
         <div className="story-copy">
           <div className="section-kicker">Real Work. Real Finishes.</div>
@@ -464,6 +597,111 @@ function Index() {
           <a className="text-link" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
             Tell us what you’re training for <ArrowRight size={16} />
           </a>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section id="about" className="about-section page-section">
+        <div className="about-card">
+          <div className="about-media">
+            <div className="about-coaches-stack">
+              <div className="about-image-wrapper">
+                <img
+                  src={dhilipImg}
+                  alt="Coach Dhilipan, performance endurance coach at RaceFace Coaching"
+                />
+                <div className="about-badge">
+                  <span className="badge-pulse" />
+                  <span>Dilipan Raj · Coach</span>
+                </div>
+              </div>
+
+              <div className="about-image-wrapper">
+                <img
+                  src={perryImg}
+                  alt="Coach Phiramoth (Perry), founder and head coach of RaceFace Coaching"
+                />
+                <div className="about-badge">
+                  <span className="badge-pulse" />
+                  <span>Phiramoth · Coach</span>
+                </div>
+                <div className="about-stat-box">
+                  <div className="stat-header">
+                    <Calendar size={16} className="text-coral" />
+                    <strong>Est. 2021 · 5+ Years of Purpose</strong>
+                  </div>
+                  <p>Dedicated endurance mentorship for road cyclists and runners chasing breakthrough milestones.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="about-content">
+            <div className="eyebrow">
+              <span className="spark">✣</span> Est. 2021 · About RaceFace Coaching
+            </div>
+            <h2>
+              Born on the tarmac. <em>Driven by physiological science.</em>
+            </h2>
+            <p className="about-lede">
+              Founded in <strong>2021</strong>, RaceFace Coaching began with a singular focus: to bring
+              structured, high-performance endurance coaching to cyclists and runners who refuse to settle
+              for generic plans.
+            </p>
+            <p className="about-body">
+              What started in 2021 as grassroots race mentorship has expanded into a championship-winning
+              coaching system. Under Coach Phiramoth’s direction, we blend metabolic zone profiling, lactate threshold
+              development, and power analysis with daily athlete communication—empowering athletes from their first
+              century ride to state championship podiums.
+            </p>
+
+            <div className="about-metrics-row">
+              <div className="metric-pill">
+                <strong>2021</strong>
+                <small>Established</small>
+              </div>
+              <div className="metric-pill">
+                <strong>100%</strong>
+                <small>Tailored 1:1 Plans</small>
+              </div>
+              <div className="metric-pill">
+                <strong>Podiums</strong>
+                <small>State Championship</small>
+              </div>
+            </div>
+
+            <div className="about-highlights">
+              <div className="highlight-item">
+                <div className="highlight-icon">
+                  <Target size={20} />
+                </div>
+                <div>
+                  <strong>Individualized Physiology</strong>
+                  <p>Heart rate kinetics, customized power curves, and smart fatigue tracking built for real schedules.</p>
+                </div>
+              </div>
+              <div className="highlight-item">
+                <div className="highlight-icon">
+                  <HeartHandshake size={20} />
+                </div>
+                <div>
+                  <strong>Hands-On Mentorship</strong>
+                  <p>Weekly workout feedback, race strategy walkthroughs, and personal accountability every step.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="about-actions">
+              <Button asChild size="lg" className="button-coral">
+                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+                  Talk with Coach <ArrowRight size={18} />
+                </a>
+              </Button>
+              <a className="text-link" href="#coaching">
+                Explore coaching services <ArrowRight size={16} />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
