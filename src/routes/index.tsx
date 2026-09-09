@@ -30,6 +30,7 @@ import podiumImg from "@/assets/raceface-podium.jpg";
 import athleteImg from "@/assets/raceface-athlete.jpg";
 import sanjayImg from "@/assets/SANJAY.jpeg";
 import sivaImg from "@/assets/SHIVA.jpeg";
+import rajuImg from "@/assets/RAJU.jpg";
 import perryImg from "@/assets/perry1.jpg";
 import dhilipImg from "@/assets/DHILIP.jpg";
 
@@ -155,7 +156,7 @@ const spotlightAthletes = [
     image: sanjayImg,
     alt: "RaceFace athlete Sanjay, National Championship Silver Medalist",
     statHeader: "National & Asian Championship",
-    statDesc: "SILVER IN NATIONAL CHAMPIONSHIP'25, REPRESENTED INDIA IN ASIAN CHAMPS",
+    statDesc: "Silver in National Championship'25, Represented India in Asian Champs",
     kicker: "Athlete Spotlight",
     title: "From State Excellence to Asian Championship representation.",
     lede: "Relentless discipline, precision aerodynamic power pacing, and international-caliber training blocks turned potential into podium silver on the national stage.",
@@ -183,7 +184,7 @@ const spotlightAthletes = [
     image: sivaImg,
     alt: "RaceFace athlete Siva Prakash, All India Police Nationalist",
     statHeader: "All India Police Nationalist",
-    statDesc: "ALL INDIA POLICE NATIONALIST · ELITE CYCLING CHAMPIONSHIP PERFORMANCE",
+    statDesc: "All India Police National Medalist ",
     kicker: "Athlete Spotlight",
     title: "Disciplined grit & high-velocity power on the national stage.",
     lede: "Balancing the call of duty with grueling endurance training, Siva Prakash channels unwavering dedication into national-level racing results powered by individualized lactate and cadence strategies.",
@@ -202,6 +203,34 @@ const spotlightAthletes = [
         title: "Duty & Athletic Mastery",
         desc: "Tailored training structures harmonized around demanding duty hours to keep form peak on race day.",
         icon: ShieldCheck,
+      },
+    ],
+  },
+  {
+    name: "Raju",
+    badge: "Athlete Journey · Raju",
+    image: rajuImg,
+    alt: "RaceFace athlete Raju, Under-14 Silver Medalist representing Tamil Nadu in Nationals",
+    statHeader: "Under-14 Silver Medalist",
+    statDesc: "Under-14 Silver Medalist · Representing TamilNadu in Nationals",
+    kicker: "Athlete Spotlight",
+    title: "Rising prodigy representing Tamil Nadu at the National Championships.",
+    lede: "With explosive juvenile cadence, strategic race acumen, and relentless dedication, Raju claimed Silver in the Under-14 category, earning his selection to represent Tamil Nadu on the prestigious national stage.",
+    highlights: [
+      {
+        title: "Under-14 Silver Medalist",
+        desc: "Secured Silver medal at the state championships with clinical finish-line acceleration and tactical positioning.",
+        icon: Trophy,
+      },
+      {
+        title: "Representing Tamil Nadu in Nationals",
+        desc: "Officially selected to wear the state colors and represent Tamil Nadu in the National Championships.",
+        icon: Award,
+      },
+      {
+        title: "Youth Precision Coaching",
+        desc: "Scientific power profiling and youth endurance progression sculpted under RaceFace mentorship.",
+        icon: Zap,
       },
     ],
   },
@@ -625,13 +654,6 @@ function Index() {
                   <span className="badge-pulse" />
                   <span>Phiramoth · Coach</span>
                 </div>
-                <div className="about-stat-box">
-                  <div className="stat-header">
-                    <Calendar size={16} className="text-coral" />
-                    <strong>Est. 2021 · 5+ Years of Purpose</strong>
-                  </div>
-                  <p>Dedicated endurance mentorship for road cyclists and runners chasing breakthrough milestones.</p>
-                </div>
               </div>
             </div>
           </div>
@@ -646,13 +668,13 @@ function Index() {
             <p className="about-lede">
               Founded in <strong>2021</strong>, RaceFace Coaching began with a singular focus: to bring
               structured, high-performance endurance coaching to cyclists and runners who refuse to settle
-              for generic plans.
+              for generic plans through TrainingPeaks.
             </p>
             <p className="about-body">
               What started in 2021 as grassroots race mentorship has expanded into a championship-winning
-              coaching system. Under Coach Phiramoth’s direction, we blend metabolic zone profiling, lactate threshold
+              coaching system. Under Coach Dilipan and Phiramoth’s direction, we blend metabolic zone profiling, lactate threshold
               development, and power analysis with daily athlete communication—empowering athletes from their first
-              century ride to state championship podiums.
+              century ride to state, national, international championship podiums.
             </p>
 
             <div className="about-metrics-row">

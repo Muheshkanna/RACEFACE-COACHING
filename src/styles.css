@@ -994,12 +994,12 @@ h1 em {
 .about-coaches-stack {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 36px;
 }
 .about-coaches-stack .about-image-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 1.15;
+  aspect-ratio: 1.18;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: var(--shadow);
