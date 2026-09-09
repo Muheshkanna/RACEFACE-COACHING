@@ -27,6 +27,7 @@ import { Button } from "@/components/ui/button";
 import logoImg from "@/assets/raceface-logo.jpg";
 import ridersImg from "@/assets/raceface-riders.jpg";
 import podiumImg from "@/assets/raceface-podium.jpg";
+import nationalsImg from "@/assets/NATIONALS.jpg";
 import athleteImg from "@/assets/raceface-athlete.jpg";
 import sanjayImg from "@/assets/SANJAY.jpeg";
 import sivaImg from "@/assets/SHIVA.jpeg";
@@ -597,8 +598,8 @@ function Index() {
       <section id="results" className="story-section page-section">
         <div className="story-image">
           <img
-            src={podiumImg}
-            alt="RaceFace athletes celebrating on the Tamil Nadu State Cycling Championship podium"
+            src={nationalsImg}
+            alt="RaceFace athletes celebrating on the National Championship podium"
           />
           <span className="story-tag">National Championship 2026 · Proven Podiums</span>
         </div>
